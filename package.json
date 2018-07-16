@@ -1,7 +1,7 @@
 {
   "name": "fl-vue-tools",
   "description": "A Vue.js project",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "mrzhou321 <mr.zhouang123@gmail.com>",
   "main": "dist/tools.js",
   "license": "MIT",
