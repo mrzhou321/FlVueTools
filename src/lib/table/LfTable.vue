@@ -7,6 +7,7 @@
         <th v-if="rowSelection">
           <span>
               <input type="checkbox" class="lf-checkbox-input"
+                     :indeterminate.prop="indeterminate"
                      v-model="allSelected"
                      @change="selectedAll"/>
           </span>
@@ -42,7 +43,8 @@
     data() {
       return {
         handledData: [],
-        allSelected: false
+        allSelected: false,
+        selectedRows: []
       }
     },
     props: {
@@ -66,6 +68,11 @@
         type: Object
       }
     },
+    computed: {
+      indeterminate() {
+        return this.selectedRows.length > 0 && !this.allSelected
+      }
+    },
     created() {
       this.handledData = this.dataSource.map(
         item => {
@@ -84,17 +91,18 @@
             return item
           }
         )
-        const selectedRows = this.handledData.filter(
+        this.selectedRows = this.handledData.filter(
           item => item.selected
         )
-        this.rowSelection.onChange(selectedRows)
+        this.rowSelection.onChange(this.selectedRows)
       },
       selectedItem(e) {
+        console.log(e.target.indeterminate)
         this.allSelected = this.rowSelection && !this.handledData.find(item => !item.selected)
-        const selectedRows = this.handledData.filter(
+        this.selectedRows = this.handledData.filter(
           item => item.selected
         )
-        this.rowSelection.onChange(selectedRows)
+        this.rowSelection.onChange(this.selectedRows)
       }
     }
   }
