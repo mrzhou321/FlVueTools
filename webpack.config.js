@@ -9,7 +9,7 @@ module.exports = {
     publicPath: '/dist/',
     // filename: 'build.js'
     filename: 'tools.js',
-    library: 'VueLFTable',
+    library: 'lf-tools',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },

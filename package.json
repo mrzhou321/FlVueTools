@@ -1,7 +1,7 @@
 {
   "name": "fl-vue-tools",
   "description": "A Vue.js project",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "mrzhou321 <mr.zhouang123@gmail.com>",
   "main": "dist/tools.js",
   "license": "MIT",
@@ -16,9 +16,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+"
+    "url": "git+https://github.com/mrzhou321/FlVueTools.git"
   },
-  "homepage": "",
+  "homepage": "https://github.com/mrzhou321/FlVueTools.git",
   "dependencies": {
     "vue": "^2.5.11",
     "vue-router": "^3.0.1"
